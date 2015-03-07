@@ -1,1 +1,1 @@
-# TeachYourself
+Project to try on some OOP concepts
