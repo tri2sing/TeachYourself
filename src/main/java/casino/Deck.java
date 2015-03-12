@@ -1,10 +1,10 @@
-package model;
+package casino;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-import model.Card.Rank;
-import model.Card.Suit;
+import casino.Card.Rank;
+import casino.Card.Suit;
 
 public class Deck {
 	private ArrayList<Card> deck;

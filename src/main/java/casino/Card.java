@@ -1,4 +1,4 @@
-package model;
+package casino;
 
 public class Card {
 	
