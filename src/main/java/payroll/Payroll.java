@@ -17,12 +17,15 @@ public class Payroll {
 	// Sunbstitutability relationship enables passing any subclass as parameter.
 	public void calculateTotalEmployeesPay(AbstractEmployee[] employees) {
 		for (int i = 0; i < employees.length; i++) {
+			// Polymorphism makes it seem that AbstractEmployee has many
+			// different behaviors. The calculatePay method differs for 
+			// each sublclass that is sent in the array parameter.
 			AbstractEmployee employee = employees[i];
 			allEmployeesPay += employee.calculatePay();
 			employee.printPay();
 		}
 	}
-	
+
 	// Overloading polymorphism: Need one copy of method for each employee type
 	public void extractEmployeeDetails(CommissionedEmployee employee) {
 		allEmployeesUnits += employee.getUnits();
@@ -32,12 +35,12 @@ public class Payroll {
 	public void extractEmployeeDetails(HourlyEmployee employee) {
 		allEmployeesHours += employee.getHours();
 	}
-	
+
 	public void printReport() {
 		System.out.println("Payroll Report:");
-		System.out.println("Total Hours: " + allEmployeesHours );
-		System.out.println("Total Units: " + allEmployeesUnits );
-		System.out.println("Total ayrolld: $ " + allEmployeesPay );
+		System.out.println("Total Hours: " + allEmployeesHours);
+		System.out.println("Total Units: " + allEmployeesUnits);
+		System.out.println("Total ayrolld: $ " + allEmployeesPay);
 	}
 
 }
