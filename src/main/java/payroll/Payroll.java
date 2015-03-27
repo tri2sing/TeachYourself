@@ -14,6 +14,7 @@ public class Payroll {
 
 	// Inclusion polymorphism: calculateTotalEmployeesPay method works on any
 	// employee type, as long the type inherits from AbstractEmployee.
+	// Sunbstitutability relationship enables passing any subclass as parameter.
 	public void calculateTotalEmployeesPay(AbstractEmployee[] employees) {
 		for (int i = 0; i < employees.length; i++) {
 			AbstractEmployee employee = employees[i];
@@ -30,6 +31,13 @@ public class Payroll {
 	// Overloading polymorphism: Need one copy of method for each employee type
 	public void extractEmployeeDetails(HourlyEmployee employee) {
 		allEmployeesHours += employee.getHours();
+	}
+	
+	public void printReport() {
+		System.out.println("Payroll Report:");
+		System.out.println("Total Hours: " + allEmployeesHours );
+		System.out.println("Total Units: " + allEmployeesUnits );
+		System.out.println("Total ayrolld: $ " + allEmployeesPay );
 	}
 
 }
