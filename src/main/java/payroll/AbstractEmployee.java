@@ -31,4 +31,7 @@ public abstract class AbstractEmployee {
 		System.out.println(firstName + " " + lastName + ": $" + String.valueOf(calculatePay()));
 	}
 	
+	public String toString() {
+		return(firstName + " " + lastName);
+	}
 }
