@@ -1,6 +1,9 @@
 package bank;
 
-public class Account {
+import java.util.Map;
+
+
+public abstract class Account {
 	private double balance;
 
 	public Account(double balance) {
@@ -27,5 +30,6 @@ public class Account {
 			throw new IllegalArgumentException("The amount to withdraw is greater than the balance");
 		}
 	}
+	
 
 }

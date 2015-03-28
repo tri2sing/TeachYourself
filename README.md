@@ -1,6 +1,10 @@
 Project to learn on some OOP concepts from the book "Sam' Teach Yourself Object Oriented Programming"
 
-The code here is drawn from the assignments in the book with slight variations that I felt help me learn better.
+The code here is drawn from the assignments in the book with slight variations that:
+
+1) I felt help me learn better.
+
+2) Incorporated newer Java features since this book was published
 
 Package description:
 
