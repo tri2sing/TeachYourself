@@ -1,10 +1,10 @@
 package payroll;
 
-public class HourlyEmployee extends AbstractEmployee {
+public class Hourly extends Employee {
 
 	private int hours;		// Number of hours worked
 	
-	public HourlyEmployee(String firstName, String lastName, double wage) {
+	public Hourly(String firstName, String lastName, double wage) {
 		super(firstName, lastName, wage);
 	}
 
@@ -23,6 +23,11 @@ public class HourlyEmployee extends AbstractEmployee {
 	@Override
 	public double calculatePay() {
 		return getWage() * hours;
+	}
+
+	@Override
+	public double calculateBonus() {
+		return 100;
 	}
 
 }

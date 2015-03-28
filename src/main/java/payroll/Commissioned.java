@@ -1,23 +1,17 @@
 package payroll;
 
-public class CommissionedEmployee extends AbstractEmployee {
+public class Commissioned extends Employee {
 
 	private int units;		// number of units sold
 	double commission;		// compensation amount per unit
 	
-	public CommissionedEmployee(String firstName, String lastName, double wage,
+	public Commissioned(String firstName, String lastName, double wage,
 			double commission) {
 		super(firstName, lastName, wage);
 		this.commission = commission;
 	}
-
-	@Override
-	public double calculatePay() {
-		return getWage() + units * commission;
-	}
 	
-	
-	public int getUnits() {
+	public int getUnitsSold() {
 		return units;
 	}
 
@@ -33,6 +27,14 @@ public class CommissionedEmployee extends AbstractEmployee {
 		return commission;
 	}
 
-	
+	@Override
+	public double calculateBonus() {
+		return 100.0 * getUnitsSold();
+	}
 
+	@Override
+	public double calculatePay() {
+		return getWage() + units * commission;
+	}
+		
 }

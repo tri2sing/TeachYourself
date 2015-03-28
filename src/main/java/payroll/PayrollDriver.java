@@ -4,10 +4,10 @@ public class PayrollDriver {
 
 	public static void main(String[] args) {
 		Payroll payroll = new Payroll();
-		CommissionedEmployee comm1 = new CommissionedEmployee("Joe", "Sales", 75000, 750);
-		CommissionedEmployee comm2 = new CommissionedEmployee("Jane", "Sales", 100000, 1000);
-		HourlyEmployee hourly1 = new HourlyEmployee("Jack", "Retail", 8.50);
-		HourlyEmployee hourly2 = new HourlyEmployee("Jill", "Retail", 8.50);
+		Commissioned comm1 = new Commissioned("Joe", "Sales", 75000, 750);
+		Commissioned comm2 = new Commissioned("Jane", "Sales", 100000, 1000);
+		Hourly hourly1 = new Hourly("Jack", "Retail", 8.50);
+		Hourly hourly2 = new Hourly("Jill", "Retail", 8.50);
 
 		comm1.incrementUnits(7);
 		comm2.incrementUnits(9);
@@ -20,7 +20,7 @@ public class PayrollDriver {
 		payroll.extractEmployeeDetails(hourly1);
 		payroll.extractEmployeeDetails(hourly2);
 		
-		AbstractEmployee [] employees = new AbstractEmployee[4];
+		Employee [] employees = new Employee[4];
 		employees[0] = comm1;
 		employees[1] = comm2;
 		employees[2] = hourly1;
@@ -28,5 +28,6 @@ public class PayrollDriver {
 		// Inclusion overloading
 		payroll.calculateTotalEmployeesPay(employees);
 		payroll.printReport();
+		payroll.payBonus(employees);
 	}
 }

@@ -1,12 +1,12 @@
 package payroll;
 
-public abstract class AbstractEmployee {
+public abstract class Employee {
 	
 	private String firstName;
 	private String lastName;
 	private double wage;
 
-	public AbstractEmployee(String firstName, String lastName, double wage) {
+	public Employee(String firstName, String lastName, double wage) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -26,6 +26,8 @@ public abstract class AbstractEmployee {
 	}
 
 	public abstract double calculatePay();
+	
+	public abstract double calculateBonus();
 	
 	public void printPay() {
 		System.out.println(firstName + " " + lastName + ": $" + String.valueOf(calculatePay()));
