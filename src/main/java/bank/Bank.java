@@ -25,7 +25,7 @@ public class Bank {
 		return accounts.get(accountName);
 	}
 	
-	public double getBalance(String accountName) {
+	public double balance(String accountName) {
 		Account account = retrieveAccount(accountName);
 		if(account != null) {
 			return account.getBalance();
@@ -35,7 +35,7 @@ public class Bank {
 		}
 	}
 	
-	public void depositFunds(String accountName, double amount) {
+	public void deposit(String accountName, double amount) {
 		Account account = retrieveAccount(accountName);
 		if(account != null) {
 			account.deposit(amount);
@@ -43,6 +43,10 @@ public class Bank {
 		else {
 			throw new InvalidParameterException(accountName + " does not exist in the bank");
 		}
+	}
+	
+	public int totalAccounts() {
+		return accounts.size();
 	}
 	
 	public double totalHoldings() {
