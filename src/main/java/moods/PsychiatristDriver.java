@@ -1,6 +1,7 @@
 package moods;
 
 public class PsychiatristDriver {
+	
 	public static void main(String [] args) {
 		HappyObject happy = new HappyObject();
 		SadObject sad = new SadObject();
