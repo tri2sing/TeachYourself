@@ -18,7 +18,7 @@ public class BankSingleton {
 	protected BankSingleton() {
 	}
 
-	public BankSingleton getInstance() {
+	public static BankSingleton getInstance() {
 		if (instance == null)
 			return new BankSingleton();
 		else
