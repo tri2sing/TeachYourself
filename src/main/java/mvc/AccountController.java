@@ -4,10 +4,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 public class AccountController implements ActionListener {
-	private AccountView view;
+	private AccountGUIView view;
 	private AccountModel model;
 
-	public AccountController(AccountView view, AccountModel model) {
+	public AccountController(AccountGUIView view, AccountModel model) {
 		this.view = view;
 		this.model = model;
 	}
@@ -15,7 +15,7 @@ public class AccountController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 		double amount = view.getAmount();
-		System.out.println("Command = " + command + ". Amount = " + String.valueOf(amount));
+		// System.out.println("Command = " + command + ". Amount = " + String.valueOf(amount));
 
 		if (command.equals(view.WITHDRAW)) {
 			model.withdraw(amount);

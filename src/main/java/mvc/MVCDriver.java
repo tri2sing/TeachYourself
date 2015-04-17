@@ -7,7 +7,9 @@ import javax.swing.JFrame;
 public class MVCDriver {
 	public static void main(String[] args) {
 		AccountModel model = new AccountModel(10000.00);
-		AccountView view = new AccountView(model);
+		AccountGUIView guiView = new AccountGUIView(model);
+		AccountCmdLineView clView = new AccountCmdLineView(model);
+		
 		JFrame frame = new JFrame();
 		WindowAdapter wa = new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
@@ -15,7 +17,7 @@ public class MVCDriver {
 			}
 		};
 		frame.addWindowListener(wa);
-		frame.getContentPane().add(view);
+		frame.getContentPane().add(guiView);
 		frame.pack();
 		frame.setVisible(true);
 	}

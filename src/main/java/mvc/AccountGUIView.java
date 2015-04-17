@@ -6,9 +6,10 @@ import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-// The GUI code I copied blindly as I have no interest in UI specifically.
+// The GUI code I copied blindly as I have no interest in UI.
+// Please don't pillory me for the quality of this one :)
 
-public class AccountView extends JPanel implements AccountObserver {
+public class AccountGUIView extends JPanel implements AccountObserver {
 
 	public final static String DEPOSIT = "Deposit";
 	public final static String WITHDRAW = "Withdraw";
@@ -24,7 +25,7 @@ public class AccountView extends JPanel implements AccountObserver {
 
 	private static final long serialVersionUID = -590918024321543897L;
 
-	public AccountView(AccountModel model) {
+	public AccountGUIView(AccountModel model) {
 		this.model = model;
 		this.model.register(this);
 		attachController(makeController());
@@ -34,7 +35,7 @@ public class AccountView extends JPanel implements AccountObserver {
 	// called by model when the model changes
 	@Override
 	public void notifyObserver() {
-		System.out.println("AccountView received notification, balance = " + String.valueOf(model.getBalance()));
+		// System.out.println("AccountView received notification, balance = " + String.valueOf(model.getBalance()));
 		balanceLabel.setText("Balance: " + model.getBalance());
 	}
 
