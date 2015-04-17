@@ -15,6 +15,7 @@ public class AccountController implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		String command = e.getActionCommand();
 		double amount = view.getAmount();
+		System.out.println("Command = " + command + ". Amount = " + String.valueOf(amount));
 
 		if (command.equals(view.WITHDRAW)) {
 			model.withdraw(amount);

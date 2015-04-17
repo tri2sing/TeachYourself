@@ -18,15 +18,18 @@ public class AccountModel {
 
 	public void setBalance(double balance) {
 		this.balance = balance;
+		notifyObservers();
 	}
 	
 	public void deposit(double amount) {
 		balance += amount;
+		notifyObservers();
 	}
 	
 	public void withdraw(double amount) {
 		if(balance >= amount) {
 			balance -= amount;
+			notifyObservers();
 		}
 		else {
 			throw new IllegalArgumentException("The amount to withdraw is greater than the balance");

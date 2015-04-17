@@ -34,6 +34,7 @@ public class AccountView extends JPanel implements AccountObserver {
 	// called by model when the model changes
 	@Override
 	public void notifyObserver() {
+		System.out.println("AccountView received notification, balance = " + String.valueOf(model.getBalance()));
 		balanceLabel.setText("Balance: " + model.getBalance());
 	}
 
