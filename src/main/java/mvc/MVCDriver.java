@@ -8,7 +8,7 @@ public class MVCDriver {
 	public static void main(String[] args) {
 		AccountModel model = new AccountModel(10000.00);
 		AccountGUIView guiView = new AccountGUIView(model);
-		AccountCmdLineView clView = new AccountCmdLineView(model);
+		AccountConsoleView clView = new AccountConsoleView(model);
 		
 		JFrame frame = new JFrame();
 		WindowAdapter wa = new WindowAdapter() {

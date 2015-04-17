@@ -6,7 +6,7 @@ import java.awt.BorderLayout;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 
-// The GUI code I copied blindly as I have no interest in UI.
+// The GUI code I copied blindly as I have no interest in GUI.
 // Please don't pillory me for the quality of this one :)
 
 public class AccountGUIView extends JPanel implements AccountObserver {

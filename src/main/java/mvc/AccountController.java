@@ -17,9 +17,9 @@ public class AccountController implements ActionListener {
 		double amount = view.getAmount();
 		// System.out.println("Command = " + command + ". Amount = " + String.valueOf(amount));
 
-		if (command.equals(view.WITHDRAW)) {
+		if (command.equals(AccountGUIView.WITHDRAW)) {
 			model.withdraw(amount);
-		} else if (command.equals(view.DEPOSIT)) {
+		} else if (command.equals(AccountGUIView.DEPOSIT)) {
 			model.deposit(amount);
 		}
 	}

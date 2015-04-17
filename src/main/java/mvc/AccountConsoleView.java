@@ -1,11 +1,11 @@
 package mvc;
 
-public class AccountCmdLineView implements AccountObserver {
+public class AccountConsoleView implements AccountObserver {
 
 	private AccountModel model;
 	
 	
-	public AccountCmdLineView(AccountModel model) {
+	public AccountConsoleView(AccountModel model) {
 		this.model = model;
 		this.model.register(this);
 	}
