@@ -45,8 +45,7 @@ public class AccountGUIView extends JPanel implements AccountObserver {
 		return Double.parseDouble(amountField.getText());
 	}
 
-	// wires the given controller to the view, allows outside object to set
-	// controller
+	// wires the given controller to the view, allows outside object to set controller
 	public void attachController(AccountController controller) {
 		// each view can only have one controller, so remove the old one first
 		if (this.controller != null) { // remove the old controller
