@@ -25,4 +25,28 @@ public class Hand {
 			return false;
 		}
 	}
+	
+	public void reset() {
+		cards.clear();
+	}
+	
+	public void turnOver() {
+		for(Card card: cards) {
+			card.setFace(Face.UP);
+		}
+	}
+	
+	public int getTotal() {
+		return total;
+	}
+	
+	public String toString() {
+		StringBuffer sB = new StringBuffer();
+		for(Card card: cards) {
+			sB.append(card.toString() + " ");
+		}
+		return sB.toString();
+	}
+	
+	
 }
