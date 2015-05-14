@@ -18,7 +18,7 @@ public class Hand {
 		total += card.getRank().getValue();
 	}
 
-	public boolean bust() {
+	public boolean isBusted() {
 		if (total > BLACKJACK) {
 			return true;
 		} else {

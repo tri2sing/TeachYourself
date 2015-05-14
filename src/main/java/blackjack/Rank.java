@@ -1,12 +1,26 @@
 package blackjack;
 
 public enum Rank {
-	TWO(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(9), TEN(10), JACK(11), QUEEN(12), KING(13), ACE(14);
+	TWO(2, "2"), 
+	THREE(3, "3"), 
+	FOUR(4, "4"), 
+	FIVE(5, "5"), 
+	SIX(6, "6"), 
+	SEVEN(7, "7"), 
+	EIGHT(8, "8"), 
+	NINE(9, "9"), 
+	TEN(10, "10"), 
+	JACK(10, "Jack"), 
+	QUEEN(10, "Queen"), 
+	KING(10, "King"), 
+	ACE(11, "Ace");
 
 	private int value;
+	private final String display;
 
-	private Rank(int rank) {
+	private Rank(int rank, String display) {
 		this.value = rank;
+		this.display = display;
 	}
 
 	public int getValue() {
@@ -15,29 +29,7 @@ public enum Rank {
 
 	@Override
 	public String toString() {
-		String result = null;
-		if (value < 11)
-			return String.valueOf(value);
-		else {
-			switch (value) {
-			case 11:
-				result = "Jack";
-				break;
-			case 12:
-				result = "Queen";
-				break;
-			case 13:
-				result = "King";
-				break;
-			case 14:
-				result = "Ace";
-				break;
-			default:
-				break;
-			}
-
-		}
-		return result;
+		return display;
 	}
 
 }
