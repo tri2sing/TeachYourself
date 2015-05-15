@@ -20,7 +20,7 @@ public abstract class Participant {
 	
 	public void play(Dealer dealer) {
 		// Stop when there is a bust or a decision to not take a card
-		while(!isBusted() && takeCard()) {
+		while(!isBusted() && takeCardDecision()) {
 			dealer.hit(this);
 		}
 		// Tell the dealer that participant wants to stand
@@ -53,5 +53,5 @@ public abstract class Participant {
 		}
 	}
 
-	protected abstract boolean takeCard();
+	protected abstract boolean takeCardDecision();
 }
