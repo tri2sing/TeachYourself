@@ -11,18 +11,19 @@ public class BlackjackPlayer extends Participant {
 		super(name, hand);
 	}
 
+	/**
+	 * The implementation asks the program user to answer the question
+	 */
 	@Override
-	protected boolean takeCardDecision() {
-		while(true) {
+	protected boolean decideHit() {
+		while (true) {
 			InteractiveConsole.writeOutput(MSG);
 			String response = InteractiveConsole.readInput(DEFAULT);
 			if (response.equalsIgnoreCase(HIT)) {
 				return true;
-			}
-			else if (response.equalsIgnoreCase(STAND)) {
+			} else if (response.equalsIgnoreCase(STAND)) {
 				return false;
-			}
-			else {
+			} else {
 				continue;
 			}
 		}

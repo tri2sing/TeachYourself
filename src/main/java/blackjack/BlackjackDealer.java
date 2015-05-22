@@ -13,19 +13,19 @@ public class BlackjackDealer extends Participant implements Dealer {
 	}
 
 	@Override
-	protected boolean takeCardDecision() {
+	protected boolean decideHit() {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
 	@Override
-	public void hit(Participant participant) {
+	public void requestHit(Participant participant) {
 		// TODO Auto-generated method stub
 
 	}
 
 	@Override
-	public void stand(Participant participant) {
+	public void passTurn(Participant participant) {
 		// TODO Auto-generated method stub
 
 	}
