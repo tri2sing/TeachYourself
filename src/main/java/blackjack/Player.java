@@ -25,7 +25,6 @@ public abstract class Player {
 		}
 		// Tell the dealer that participant wants to stand
 		stopPlay(dealer);
-		;
 	}
 
 	public void reset() {
@@ -61,7 +60,7 @@ public abstract class Player {
 	 */
 	protected void stopPlay(Dealer dealer) {
 		// The player hands control to the dealer to move on to the next player
-		dealer.passTurn(this);
+		dealer.passTurn();
 	}
 
 	/**

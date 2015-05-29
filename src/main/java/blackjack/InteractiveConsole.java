@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 public class InteractiveConsole implements Listener {
 
 	// Singleton pattern
-	public final static InteractiveConsole instance = new InteractiveConsole();
+	public final static InteractiveConsole INSTANCE = new InteractiveConsole();
 	private static BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
 
 	// Prevents instantiation from outside for the singleton

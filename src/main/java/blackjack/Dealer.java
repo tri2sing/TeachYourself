@@ -5,5 +5,5 @@ public interface Dealer {
 	public void giveHit(Player participant);
 
 	// A player asks the dealer to pass the turn to stop play
-	public void passTurn(Player participant);
+	public void passTurn();
 }

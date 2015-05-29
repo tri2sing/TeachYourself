@@ -26,21 +26,12 @@ public class BlackjackDealer extends Player implements Dealer {
 	}
 
 	@Override
-	protected boolean decideHit() {
-		if (getHand().getTotal() < 16) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	@Override
 	public void giveHit(Player player) {
 		player.addCard(cards.deal(Face.UP));
 	}
 
 	@Override
-	public void passTurn(Player participant) {
+	public void passTurn() {
 		if (currentPlayer != players.size()) {
 			Player player = players.get(currentPlayer);
 			currentPlayer++;
@@ -70,6 +61,23 @@ public class BlackjackDealer extends Player implements Dealer {
 	}
 
 	public void startGame() {
-
+		deal();
+		passTurn();
 	}
+
+	@Override
+	protected boolean decideHit() {
+		if (getHand().getTotal() < 17) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	
+	@Override
+	protected void stopPlay(Dealer dealer) {
+		// Do nothing, other players call passTurn for the dealer.
+		// This prevents an infinite loop from occurring. 
+	}
+
 }
