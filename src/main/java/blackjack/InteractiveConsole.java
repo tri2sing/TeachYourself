@@ -27,7 +27,7 @@ public class InteractiveConsole implements Listener {
 		}
 	}
 	
-	public void handChanged(Participant participant) {
+	public void handChanged(Player participant) {
 		System.out.println(participant.toString());
 	}
 

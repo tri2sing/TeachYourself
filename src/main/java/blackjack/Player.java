@@ -2,13 +2,13 @@ package blackjack;
 
 import java.util.ArrayList;
 
-public abstract class Participant {
+public abstract class Player {
 
 	private String name;
 	private Hand hand;
 	private ArrayList<Listener> listeners = new ArrayList<Listener>();
 
-	public Participant(String name, Hand hand) {
+	public Player(String name, Hand hand) {
 		this.name = name;
 		this.hand = hand;
 	}
@@ -21,7 +21,7 @@ public abstract class Participant {
 	public void play(Dealer dealer) {
 		// Stop when there is a bust or a decision to not take a card
 		while (!isBusted() && decideHit()) {
-			dealer.requestHit(this);
+			dealer.giveHit(this);
 		}
 		// Tell the dealer that participant wants to stand
 		stopPlay(dealer);
@@ -66,7 +66,7 @@ public abstract class Participant {
 
 	/**
 	 * Decide whether to hit or not. 
-	 * The details of the decision are left to the child class.
+	 * The decision is left to the child class.
 	 * 
 	 * @return
 	 */

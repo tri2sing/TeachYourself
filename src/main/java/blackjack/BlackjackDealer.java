@@ -2,31 +2,74 @@ package blackjack;
 
 import java.util.ArrayList;
 
-public class BlackjackDealer extends Participant implements Dealer {
+public class BlackjackDealer extends Player implements Dealer {
 
-	private Pile cardPile;
-	private ArrayList<Participant> players = new ArrayList<Participant>();
+	private Pile cards;
+	private ArrayList<Player> players = new ArrayList<Player>();
 	private int currentPlayer;
-	
-	public BlackjackDealer(String name, Hand hand) {
+
+	public BlackjackDealer(String name, Hand hand, Pile cardPile) {
 		super(name, hand);
+		this.cards = cardPile;
+	}
+
+	public void addPlayer(Player player) {
+		players.add(player);
+	}
+
+	@Override
+	public void play(Dealer dealer) {
+		// Expose cards before
+		getHand().turnOver();
+		notifyListeners();
+		super.play(dealer);
 	}
 
 	@Override
 	protected boolean decideHit() {
-		// TODO Auto-generated method stub
-		return false;
+		if (getHand().getTotal() < 16) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	@Override
-	public void requestHit(Participant participant) {
-		// TODO Auto-generated method stub
-
+	public void giveHit(Player player) {
+		player.addCard(cards.deal(Face.UP));
 	}
 
 	@Override
-	public void passTurn(Participant participant) {
-		// TODO Auto-generated method stub
+	public void passTurn(Player participant) {
+		if (currentPlayer != players.size()) {
+			Player player = players.get(currentPlayer);
+			currentPlayer++;
+			player.play(this);
+		} else {
+			this.play(this);
+		}
+	}
+
+	public void deal() {
+		cards.shuffle();
+		// Reset each player and deal one card to every one
+		for (Player player : players) {
+			player.reset();
+			player.addCard(cards.deal(Face.UP));
+		}
+		// Deal one card to self face up
+		this.addCard(cards.deal(Face.UP));
+
+		// Deal one more card to each player
+		for (Player player : players) {
+			player.addCard(cards.deal(Face.UP));
+		}
+		// Deal one card to self face down
+		this.addCard(cards.deal(Face.DOWN));
+
+	}
+
+	public void startGame() {
 
 	}
 }

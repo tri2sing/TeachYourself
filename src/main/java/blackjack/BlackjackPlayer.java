@@ -1,6 +1,6 @@
 package blackjack;
 
-public class BlackjackPlayer extends Participant {
+public class BlackjackPlayer extends Player {
 
 	private final static String HIT = "H";
 	private final static String STAND = "S";

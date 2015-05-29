@@ -37,7 +37,7 @@ public class Pile {
 			card.setFace(Face.DOWN);
 	}
 	
-	private void shuffle() {
+	public void shuffle() {
 		int numCards = pile.size();
 		for (int current = 0; current < numCards; current++) {
 			int target = random.nextInt(numCards);
